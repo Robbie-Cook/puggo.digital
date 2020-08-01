@@ -56,8 +56,8 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
             <Row
               css={css`
             /* padding-bottom: 20%; */
-            padding-top: 10%;
-            padding-bottom: 10%;
+            padding-top: 100px;
+            padding-bottom: 100px;
             background-image: url('${BackgroundImage}');
             background-size: cover;
             background-repeat: no-repeat;
