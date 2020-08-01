@@ -11,6 +11,8 @@ import { Layout, Menu, Breadcrumb, Row, Col, Card, Space } from "antd";
 import Typography from "../components/typography/Typography";
 import Button from "../components/Button";
 import Section from "../components/Section";
+import { Link } from "react-router-dom";
+import Types from "../types";
 
 const { Title, Text } = Typography;
 
@@ -92,11 +94,16 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
                     </Space>
                   </Col>
                 </Row>
-                <Projects onlyShowPreview={true} /></Space>
+                <Projects onlyShowPreview={true} />
+              </Space>
 
               <Row>
                 <Col span={24}>
-                  <Button type="link">See more...</Button>
+                  <Link to={Types.Pages.Projects}>
+                    <Button type="link" href="/projects">
+                      See more...
+                    </Button>
+                  </Link>
                 </Col>
               </Row>
             </Section>

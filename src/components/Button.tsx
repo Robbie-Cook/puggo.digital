@@ -9,6 +9,8 @@ import React from "react";
 interface ButtonProps {
   children?: any;
   type: any;
+  onClick?: ((event: React.MouseEvent<HTMLElement, MouseEvent>) => void) | undefined;
+  href?: string;
 }
 
 /**
@@ -17,10 +19,10 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = (props) => {
   return (
     <AntButton
-      type={props.type}
       css={css`
         font-size: 1.07rem;
       `}
+      {...props}
     >
       {props.children}
     </AntButton>

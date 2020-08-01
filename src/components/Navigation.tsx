@@ -4,6 +4,7 @@ import React from "react";
 
 import { Layout, Menu, Breadcrumb, Typography } from "antd";
 import { useHistory, useLocation } from "react-router-dom";
+import Types from "../types";
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -13,11 +14,6 @@ const { Title, Paragraph, Text } = Typography;
 interface NavigationProps {
   children?: any;
   height: number;
-}
-
-enum Pages {
-  Home = "/",
-  Projects = "/projects",
 }
 
 /**
@@ -31,10 +27,10 @@ const Navigation: React.FC<NavigationProps> = (props) => {
    * Get the current page
    */
   let selectedPage = "";
-  if (location.pathname === Pages.Home) {
-    selectedPage = Pages.Home;
-  } else if (location.pathname === Pages.Projects) {
-    selectedPage = Pages.Projects;
+  if (location.pathname === Types.Pages.Home) {
+    selectedPage = Types.Pages.Home;
+  } else if (location.pathname === Types.Pages.Projects) {
+    selectedPage = Types.Pages.Projects;
   }
 
   console.log(location);
@@ -72,7 +68,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
       </div>
       <Menu mode="horizontal" selectedKeys={[selectedPage]}>
         <Menu.Item
-          key={Pages.Home}
+          key={Types.Pages.Home}
           css={css`
             color: black;
           `}
@@ -81,7 +77,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
           Home
         </Menu.Item>
         <Menu.Item
-          key={Pages.Projects}
+          key={Types.Pages.Projects}
           css={css`
             color: black;
           `}
