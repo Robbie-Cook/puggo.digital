@@ -66,7 +66,7 @@ const Text: React.FC<{
   return (
     <AntText
       css={css`
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: #282828;
       `}
       {...props}
