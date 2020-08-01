@@ -1,12 +1,14 @@
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
-import MyBackgroundImage from "../images/background-image.jpg";
+import { css, jsx, SerializedStyles } from "@emotion/core";
 
 /**
   Interface for BackgroundImage props
 */
 interface BackgroundImageProps {
   children?: any;
+  src: string;
+  height?: number;
+  css?: SerializedStyles;
 }
 
 /**
@@ -15,15 +17,20 @@ interface BackgroundImageProps {
 const BackgroundImage: React.FC<BackgroundImageProps> = (props) => {
   return (
     <div
-      css={css`
+      css={[
+        css`
         position: absolute;
         width: 100%;
-        height: 80vh;
-        background-image: url('${MyBackgroundImage}');
+        height: ${props.height ? `${props.height}px` : "80vh"};
+        background-image: url('${props.src}');
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: center 39%;
-      `}
+        background-position: center;
+        opacity: .88;
+      `,
+        props.css,
+      ]}
+      {...props}
     />
   );
 };

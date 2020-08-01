@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import Navigation from "../components/Navigation";
-import BackgroundImage from "../images/project-background-image.jpg";
+import ProjectBackgroundImage from "../images/project-background-image.jpg";
+import BackgroundImage from "../components/BackgroundImage";
 import { Parallax } from "react-scroll-parallax";
 
 import { Layout, Menu, Breadcrumb, Row, Col, Card, Space } from "antd";
@@ -51,18 +52,16 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
             min-height: 60vh;
           `}
         >
+          <BackgroundImage src={ProjectBackgroundImage} height={600} />
+
           <Space direction="vertical" size="large">
             <Row
               css={css`
-            /* padding-bottom: 20%; */
-            padding-top: 10%;
-            padding-bottom: 10%;
-            background-image: url('${BackgroundImage}');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          `}
+                padding-top: 100px;
+                padding-bottom: 100px;
+              `}
             >
+              {" "}
               <Col span={24}>
                 <Parallax
                   className="custom-class"
