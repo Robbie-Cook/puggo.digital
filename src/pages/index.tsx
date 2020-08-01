@@ -4,9 +4,12 @@ import Navigation from "../components/Navigation";
 import Projects from "../components/Projects";
 import slugify from "slugify";
 import { Parallax } from "react-scroll-parallax";
+
 import MyBackgroundImage from "../images/background-image.jpg";
+import Puggo2 from "../images/puggo-with-hat.jpg";
 
 import BackgroundImage from "../components/BackgroundImage";
+
 
 import { Layout, Menu, Breadcrumb, Row, Col, Card, Space } from "antd";
 
@@ -63,6 +66,16 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
               background-position: center 35%;
             `}
           />
+          <BackgroundImage
+            src={Puggo2}
+            css={css`
+              top: 150vh;
+              background-position: 30% center;
+              background-size: 500px;
+            `}
+            height={700}
+          />
+
           <Space direction="vertical" size="large">
             <Row
               css={css`
