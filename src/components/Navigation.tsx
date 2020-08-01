@@ -3,6 +3,7 @@ import { css, jsx } from "@emotion/core";
 import React from "react";
 
 import { Layout, Menu, Breadcrumb, Typography } from "antd";
+import { useHistory, useLocation } from "react-router-dom";
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -14,10 +15,30 @@ interface NavigationProps {
   height: number;
 }
 
+enum Pages {
+  Home = "/",
+  Projects = "/projects",
+}
+
 /**
  * A Navigation component.
  */
 const Navigation: React.FC<NavigationProps> = (props) => {
+  const history = useHistory();
+  const location = useLocation();
+
+  /**
+   * Get the current page
+   */
+  let selectedPage = "";
+  if (location.pathname === Pages.Home) {
+    selectedPage = Pages.Home;
+  } else if (location.pathname === Pages.Projects) {
+    selectedPage = Pages.Projects;
+  }
+
+  console.log(location);
+
   return (
     <div
       css={css`
@@ -49,20 +70,22 @@ const Navigation: React.FC<NavigationProps> = (props) => {
           puggo
         </Title>
       </div>
-      <Menu mode="horizontal" defaultSelectedKeys={["2"]}>
+      <Menu mode="horizontal" selectedKeys={[selectedPage]}>
         <Menu.Item
-          key="1"
+          key={Pages.Home}
           css={css`
             color: black;
           `}
+          onClick={() => history.push("/")}
         >
           Home
         </Menu.Item>
         <Menu.Item
-          key="2"
+          key={Pages.Projects}
           css={css`
             color: black;
           `}
+          onClick={() => history.push("/projects")}
         >
           Projects
         </Menu.Item>
