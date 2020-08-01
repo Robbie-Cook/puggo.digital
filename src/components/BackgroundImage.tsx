@@ -19,15 +19,15 @@ const BackgroundImage: React.FC<BackgroundImageProps> = (props) => {
     <div
       css={[
         css`
-        position: absolute;
-        width: 100%;
-        height: ${props.height ? `${props.height}px` : "80vh"};
-        background-image: url('${props.src}');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: .88;
-      `,
+          position: absolute;
+          width: 100%;
+          height: ${props.height ? `${props.height}px` : "80vh"};
+          background-image: url('${props.src}');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          opacity: .88;
+        `,
         props.css,
       ]}
       {...props}
