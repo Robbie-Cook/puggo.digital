@@ -88,26 +88,6 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
 
             </Section>
 
-            {/* About */}
-            <Section title="About">
-              <Row>
-                <Col
-                  span={24}
-                  css={css`
-                    padding: 0 20%;
-                  `}
-                >
-                  <Text>
-                    puggo.digital makes noice websites and web technologies. If
-                    you got problems, hit up the support team at{" "}
-                    <a href="mailto:contact@puggo.digital">
-                      contact@puggo.digital
-                    </a>
-                    , and we'll sort you out.
-                  </Text>
-                </Col>
-              </Row>
-            </Section>
           </Space>
         </div>
       </Content>
