@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import Navigation from "../components/Navigation";
-import BackgroundImage from "../images/background-image.jpg";
+import BackgroundImage from "../images/project-background-image.jpg";
 import { Parallax } from "react-scroll-parallax";
 
 import { Layout, Menu, Breadcrumb, Row, Col, Card, Space } from "antd";
@@ -85,9 +85,7 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
               <Space direction="vertical" size="large">
                 <Projects />
               </Space>
-
             </Section>
-
           </Space>
         </div>
       </Content>

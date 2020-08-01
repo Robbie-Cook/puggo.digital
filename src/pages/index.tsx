@@ -3,8 +3,8 @@ import { css, jsx } from "@emotion/core";
 import Navigation from "../components/Navigation";
 import Projects from "../components/Projects";
 import slugify from "slugify";
-import BackgroundImage from "../images/background-image.jpg";
 import { Parallax } from "react-scroll-parallax";
+import BackgroundImage from "../components/BackgroundImage";
 
 import { Layout, Menu, Breadcrumb, Row, Col, Card, Space } from "antd";
 
@@ -52,19 +52,16 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
           css={css`
             background-color: #f0f2f5;
             min-height: 60vh;
+            position: relative;
           `}
         >
+          <BackgroundImage />
           <Space direction="vertical" size="large">
             <Row
               css={css`
-            /* padding-bottom: 20%; */
-            padding-top: 100px;
-            padding-bottom: 100px;
-            background-image: url('${BackgroundImage}');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-          `}
+                padding-top: 100px;
+                padding-bottom: 100px;
+              `}
             >
               <Col span={24}>
                 <Parallax
