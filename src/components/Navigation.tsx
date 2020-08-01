@@ -22,7 +22,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
     <div
       css={css`
         display: flex;
-        height: ${props.height}
+        height: ${props.height};
       `}
     >
       <div
@@ -40,15 +40,31 @@ const Navigation: React.FC<NavigationProps> = (props) => {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 80px;
+            margin-right: 20px;
+            text-shadow: 2px 1px 0px #ce5937;
+            font-family: "Coustard", serif;
           `}
         >
-          puggo.digital
+          puggo
         </Title>
       </div>
       <Menu mode="horizontal" defaultSelectedKeys={["2"]}>
-        <Menu.Item key="1">Home</Menu.Item>
-        <Menu.Item key="2">Projects</Menu.Item>
+        <Menu.Item
+          key="1"
+          css={css`
+            color: black;
+          `}
+        >
+          Home
+        </Menu.Item>
+        <Menu.Item
+          key="2"
+          css={css`
+            color: black;
+          `}
+        >
+          Projects
+        </Menu.Item>
       </Menu>
       ,
     </div>
