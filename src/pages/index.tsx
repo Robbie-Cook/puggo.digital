@@ -89,15 +89,8 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
               </Col>
             </Row>
 
-            <Section>
+            <Section title="Projects">
               <Space direction="vertical" size="large">
-                <Row>
-                  <Col span={24}>
-                    <Space direction="vertical">
-                      <Title level={2}>Projects</Title>
-                    </Space>
-                  </Col>
-                </Row>
                 <Projects onlyShowPreview={true} />
               </Space>
 

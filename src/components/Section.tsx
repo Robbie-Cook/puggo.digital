@@ -23,13 +23,12 @@ const Section: React.FC<SectionProps> = (props) => {
     <Parallax className="custom-class" y={[-20, 20]} tagOuter="figure">
       <div
         css={css`
-          padding: 50px 0;
+          padding: 150px 0;
         `}
       >
         {props.title && <Row
           css={css`
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin: 0 0 70px 0;
           `}
         >
           <Col span={24}>

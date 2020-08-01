@@ -34,7 +34,11 @@ const Title: React.FC<{
           ${props.level === 1
             ? `
             font-size: 5.5rem!important;         
-            // letter-spacing: -3px;
+           `
+            : ``}
+          ${props.level === 2
+            ? `
+            font-size: 40px!important;        
            `
             : ``}
         `,
