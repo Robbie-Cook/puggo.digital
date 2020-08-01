@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
 import Navigation from "../components/Navigation";
-import Projects from "../data/projects";
-import slugify from "slugify";
 import BackgroundImage from "../images/background-image.jpg";
 import { Parallax } from "react-scroll-parallax";
 
@@ -11,6 +9,7 @@ import { Layout, Menu, Breadcrumb, Row, Col, Card, Space } from "antd";
 import Typography from "../components/typography/Typography";
 import Button from "../components/Button";
 import Section from "../components/Section";
+import Projects from "../components/Projects";
 
 const { Title, Text } = Typography;
 
@@ -78,70 +77,15 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
                   >
                     Projects
                   </Title>
-                  <Title level={4}>websites. puggos.</Title>
                 </Parallax>
               </Col>
             </Row>
 
             <Section>
               <Space direction="vertical" size="large">
-                <Row>
-                  <Col span={24}>
-                    <Space direction="vertical">
-                      <Title level={2}>Projects</Title>
-                    </Space>
-                  </Col>
-                </Row>
-                <Row gutter={[24, 16]}>
-                  {Projects.filter((item) => item.preview).map((project) => {
-                    const imageName = `${
-                      process.env.PUBLIC_URL
-                    }/images/projects/${slugify(
-                      project.name.replace(/\.com/, "").replace(/\./g, "-")
-                    )}.png`;
-
-                    return (
-                      <Col
-                        key={project.name}
-                        span={8}
-                        xs={{ span: 24 }}
-                        xl={8}
-                        css={css`
-                          display: flex;
-                          align-items: center;
-                          flex-direction: column;
-                        `}
-                      >
-                        <a href={project.link} target="_black">
-                          <Card
-                            title={<a href={project.link}>{project.name}</a>}
-                            css={css`
-                              width: 300px;
-                              margin: 0 20px;
-                            `}
-                          >
-                            <div
-                              css={css`
-                                background-image: url(${imageName});
-                                height: 130px;
-                                width: 100%;
-                                background-size: cover;
-                                background-repeat: no-repeat;
-                              `}
-                            />
-                          </Card>
-                        </a>
-                      </Col>
-                    );
-                  })}
-                </Row>
+                <Projects />
               </Space>
 
-              <Row>
-                <Col span={24}>
-                  <Button type="link">See more...</Button>
-                </Col>
-              </Row>
             </Section>
 
             {/* About */}
