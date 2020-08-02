@@ -7,6 +7,7 @@ import { Parallax } from "react-scroll-parallax";
 
 import MyBackgroundImage from "../images/background-image.jpg";
 import Puggo2 from "../images/puggo-with-hat.jpg";
+import Robbie from "../images/people/robbie.jpg";
 
 import BackgroundImage from "../components/BackgroundImage";
 
@@ -18,6 +19,7 @@ import Button from "../components/Button";
 import Section from "../components/Section";
 import { Link } from "react-router-dom";
 import Types from "../types";
+import Person from "../components/Person";
 
 const { Title, Text } = Typography;
 
@@ -118,7 +120,7 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
             </Section>
 
             {/* About */}
-            <Section title="About" offset={60}>
+            <Section title="About">
               <Row>
                 <Col
                   span={24}
@@ -137,7 +139,7 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
                 </Col>
               </Row>
             </Section>
-            <Section title="Team" offset={40}>
+            <Section title="Team">
               <Row>
                 <Col
                   span={24}
@@ -145,19 +147,24 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
                     padding: 0 20%;
                   `}
                 >
-                  <div
-                    css={css`
-                      display: flex;
-                      flex-direction: column;
-                      align-items: center;
-                    `}
-                  >
-                    <Avatar size={200} icon={<UserOutlined />} />
-                    <Title level={4} css={css`
-                      margin-top: 20px;
-                      font-weight: bold;
-                    `}>Robbie Cook</Title>
-                  </div>
+                  {[
+                    {
+                      name: "Robbie",
+                      title: "Developer",
+                      image: Robbie,
+                      links: [
+                        {
+                          name: "Github",
+                          link: "",
+                        },
+                      ],
+                      description: "Loves cats, and React",
+                    },
+                  ].map((item) => {
+                    return (
+                     <Person key={item.name} {...item} />
+                    );
+                  })}
                 </Col>
               </Row>
             </Section>
