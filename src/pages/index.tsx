@@ -10,7 +10,8 @@ import Puggo2 from "../images/puggo-with-hat.jpg";
 
 import BackgroundImage from "../components/BackgroundImage";
 
-import { Layout, Menu, Breadcrumb, Row, Col, Card, Space } from "antd";
+import { Layout, Menu, Breadcrumb, Row, Col, Card, Space, Avatar } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 import Typography from "../components/typography/Typography";
 import Button from "../components/Button";
@@ -125,20 +126,38 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
                     padding: 0 20%;
                   `}
                 >
-                  <Text
-                    css={css`
-                      color: #000;
-                      font-weight: 500;
-                      font-size: 1.25rem;
-                    `}
-                  >
-                    puggo.digital makes noice websites and web technologies. If
-                    you got problems, hit up the support team at{" "}
+                  <Text css={css``}>
+                    puggo.digital makes noice web stuff. If you got problems,
+                    hit up{" "}
                     <a href="mailto:contact@puggo.digital">
                       contact@puggo.digital
                     </a>
                     , and we'll sort you out.
                   </Text>
+                </Col>
+              </Row>
+            </Section>
+            <Section title="Team" offset={40}>
+              <Row>
+                <Col
+                  span={24}
+                  css={css`
+                    padding: 0 20%;
+                  `}
+                >
+                  <div
+                    css={css`
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                    `}
+                  >
+                    <Avatar size={200} icon={<UserOutlined />} />
+                    <Title level={4} css={css`
+                      margin-top: 20px;
+                      font-weight: bold;
+                    `}>Robbie Cook</Title>
+                  </div>
                 </Col>
               </Row>
             </Section>

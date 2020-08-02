@@ -66,10 +66,16 @@ const Text: React.FC<{
 }> = (props) => {
   return (
     <AntText
-      css={[css`
-        font-size: 1.1rem;
-        color: #282828;
-      `, props.css]}
+      css={[
+        css`
+          font-size: 1.1rem;
+          color: #282828;
+          color: #000;
+          font-weight: 500;
+          font-size: 1.25rem;
+        `,
+        props.css,
+      ]}
       {...props}
     >
       {props.children}
