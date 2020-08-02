@@ -62,13 +62,14 @@ const Paragraph: React.FC<{
  */
 const Text: React.FC<{
   children: any;
+  css?: SerializedStyles;
 }> = (props) => {
   return (
     <AntText
-      css={css`
+      css={[css`
         font-size: 1.1rem;
         color: #282828;
-      `}
+      `, props.css]}
       {...props}
     >
       {props.children}

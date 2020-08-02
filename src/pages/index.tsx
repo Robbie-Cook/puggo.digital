@@ -10,7 +10,6 @@ import Puggo2 from "../images/puggo-with-hat.jpg";
 
 import BackgroundImage from "../components/BackgroundImage";
 
-
 import { Layout, Menu, Breadcrumb, Row, Col, Card, Space } from "antd";
 
 import Typography from "../components/typography/Typography";
@@ -38,7 +37,7 @@ interface IndexPageProps {
  */
 const IndexPage: React.FC<IndexPageProps> = (props) => {
   return (
-    <Layout>
+    <Layout css={css``}>
       <Header
         css={css`
           background-color: white;
@@ -50,12 +49,10 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
       <Content
         css={css`
           min-height: calc(100vh - ${navHeight}px - ${footerHeight}px);
-          background-color: white;
         `}
       >
         <div
           css={css`
-            background-color: #f0f2f5;
             min-height: 60vh;
             position: relative;
           `}
@@ -72,6 +69,7 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
               top: 150vh;
               background-position: 30% center;
               background-size: 500px;
+              opacity: 0.68;
             `}
             height={700}
           />
@@ -119,7 +117,7 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
             </Section>
 
             {/* About */}
-            <Section title="About">
+            <Section title="About" offset={60}>
               <Row>
                 <Col
                   span={24}
@@ -127,7 +125,13 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
                     padding: 0 20%;
                   `}
                 >
-                  <Text>
+                  <Text
+                    css={css`
+                      color: #000;
+                      font-weight: 500;
+                      font-size: 1.25rem;
+                    `}
+                  >
                     puggo.digital makes noice websites and web technologies. If
                     you got problems, hit up the support team at{" "}
                     <a href="mailto:contact@puggo.digital">
@@ -145,6 +149,8 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
       <Footer
         css={css`
           text-align: center;
+          position: relative;
+          top: 400px;
         `}
       >
         puggo.digital ©2020

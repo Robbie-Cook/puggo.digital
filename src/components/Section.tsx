@@ -13,14 +13,18 @@ const { Title, Text } = Typography;
 interface SectionProps {
   children?: any;
   title?: string;
+  offset?: number;
 }
 
 /**
  *  A Section component.
  */
 const Section: React.FC<SectionProps> = (props) => {
+
+  const offset = props.offset ?? 20;
+
   return (
-    <Parallax className="custom-class" y={[-20, 20]} tagOuter="figure">
+    <Parallax className="custom-class" y={[-offset, offset]} tagOuter="figure">
       <div
         css={css`
           padding: 150px 0;

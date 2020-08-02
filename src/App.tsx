@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core";
+import { css, jsx, Global } from "@emotion/core";
 import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -13,6 +13,13 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Global
+          styles={css`
+            body {
+              background-color: #f0f2f5;
+            }
+          `}
+        />
         <TransitionGroup>
           <CSSTransition
             // key={}
