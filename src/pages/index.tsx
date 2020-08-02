@@ -159,7 +159,7 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
                     title: "",
                     image: <UserOutlined />,
                     links: [],
-                    description: "More welcome! Send an email",
+                    description: "More welcome! Send an email.",
                   },
                 ].map((item) => {
                   return (
