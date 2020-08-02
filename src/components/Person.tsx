@@ -12,7 +12,7 @@ const { Title, Text } = Typography;
 interface PersonProps {
   children?: any;
   name?: string;
-  image?: string;
+  image?: string | JSX.Element;
   title?: string;
   description?: string;
 }
@@ -30,7 +30,16 @@ const Person: React.FC<PersonProps> = (props) => {
         align-items: center;
       `}
     >
-      <Avatar size={270} icon={<img src={props.image} />} />
+      <Avatar
+        size={270}
+        icon={
+          typeof props.image === "string" ? (
+            <img src={props.image} />
+          ) : (
+            props.image
+          )
+        }
+      />
       <div
         css={css`
           display: flex;
@@ -41,7 +50,7 @@ const Person: React.FC<PersonProps> = (props) => {
           level={4}
           css={css`
             margin-top: 20px;
-            margin-bottom: 5px;
+            margin-bottom: 0px !important;
             font-weight: bold;
           `}
         >
@@ -54,12 +63,17 @@ const Person: React.FC<PersonProps> = (props) => {
             font-size: 0.96rem;
             font-weight: bold;
             font-family: "Coustard", sans-serif;
-            
           `}
         >
           {props.title}
         </Text>
-        <Text>{props.description}</Text>
+        <Text
+          css={css`
+            width: max-content;
+          `}
+        >
+          {props.description}
+        </Text>
       </div>
     </div>
   );

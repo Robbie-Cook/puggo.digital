@@ -61,7 +61,6 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
                 padding-bottom: 100px;
               `}
             >
-              {" "}
               <Col span={24}>
                 <Parallax
                   className="custom-class"

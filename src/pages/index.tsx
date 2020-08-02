@@ -140,32 +140,43 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
               </Row>
             </Section>
             <Section title="Team">
-              <Row>
-                <Col
-                  span={24}
-                  css={css`
-                    padding: 0 20%;
-                  `}
-                >
-                  {[
-                    {
-                      name: "Robbie",
-                      title: "Developer",
-                      image: Robbie,
-                      links: [
-                        {
-                          name: "Github",
-                          link: "",
-                        },
-                      ],
-                      description: "Loves cats, and React",
-                    },
-                  ].map((item) => {
-                    return (
-                     <Person key={item.name} {...item} />
-                    );
-                  })}
-                </Col>
+              <Row justify="center">
+                {[
+                  {
+                    name: "Robbie",
+                    title: "Developer",
+                    image: Robbie,
+                    links: [
+                      {
+                        name: "Github",
+                        link: "",
+                      },
+                    ],
+                    description: "Loves cats, and React.",
+                  },
+                  {
+                    name: "You?",
+                    title: "",
+                    image: <UserOutlined />,
+                    links: [],
+                    description: "More welcome! Send an email",
+                  },
+                ].map((item) => {
+                  return (
+                    <Col
+                      key={item.name}
+                      span={8}
+                      xs={{ span: 24 }}
+                      xl={8}
+                      css={css`
+                        padding: 0 20%;
+                        /* margin-bottom: 40px; */
+                      `}
+                    >
+                      <Person {...item} />
+                    </Col>
+                  );
+                })}
               </Row>
             </Section>
           </Space>
