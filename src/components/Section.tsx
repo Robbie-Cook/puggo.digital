@@ -36,7 +36,7 @@ const Section: React.FC<SectionProps> = (props) => {
           `}
         >
           <Col span={24}>
-            <Title level={2}>{props.title}</Title>
+            <Title level={2}>{props.title}.</Title>
           </Col>
         </Row>}
         {props.children}

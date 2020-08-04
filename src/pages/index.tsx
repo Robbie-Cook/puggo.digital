@@ -4,6 +4,7 @@ import Navigation from "../components/Navigation";
 import Projects from "../components/Projects";
 import slugify from "slugify";
 import { Parallax } from "react-scroll-parallax";
+import styled from "@emotion/styled";
 
 import MyBackgroundImage from "../images/background-image.jpg";
 import Puggo2 from "../images/puggo-with-hat.jpg";
@@ -34,6 +35,17 @@ const footerHeight = 66;
 interface IndexPageProps {
   children?: any;
 }
+
+const Value = styled((props: { children: string }) => (
+  <Title
+    css={css`
+      margin-bottom: 4rem!important;
+    `}
+    level={4}
+  >
+    {props.children}
+  </Title>
+))``;
 
 /**
  *  A IndexPage component.
@@ -69,7 +81,7 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
           <BackgroundImage
             src={Puggo2}
             css={css`
-              top: 150vh;
+              top: 210vh;
               background-position: 30% center;
               background-size: 500px;
               opacity: 0.68;
@@ -115,6 +127,22 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
                       See more...
                     </Button>
                   </Link>
+                </Col>
+              </Row>
+            </Section>
+
+            {/* About */}
+            <Section title="Our why">
+              <Row>
+                <Col
+                  span={24}
+                  css={css`
+                    padding: 0 20%;
+                  `}
+                >
+                  <Value>Good things take time and dedication.</Value>
+                  <Value>Do it once, do it right.</Value>
+                  <Value>care for people.</Value>
                 </Col>
               </Row>
             </Section>
