@@ -20,7 +20,6 @@ interface SectionProps {
  *  A Section component.
  */
 const Section: React.FC<SectionProps> = (props) => {
-
   const offset = props.offset ?? 20;
 
   return (
@@ -30,15 +29,25 @@ const Section: React.FC<SectionProps> = (props) => {
           padding: 150px 0;
         `}
       >
-        {props.title && <Row
-          css={css`
-            margin: 0 0 70px 0;
-          `}
-        >
-          <Col span={24}>
-            <Title level={2}>{props.title}.</Title>
-          </Col>
-        </Row>}
+        {props.title && (
+          <Row
+            css={css`
+              margin: 0 0 70px 0;
+            `}
+            justify="center"
+          >
+            <Col span={24}>
+              <Title
+                level={2}
+                css={css`
+                  text-align: center;
+                `}
+              >
+                {props.title}.
+              </Title>
+            </Col>
+          </Row>
+        )}
         {props.children}
       </div>
     </Parallax>

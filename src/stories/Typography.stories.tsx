@@ -22,3 +22,10 @@ export const H2Story = () => (
 H2Story.story = {
   name: "Level 2",
 };
+
+export const Text = () => (
+  <Typography.Text>{text("Text", "My text")}</Typography.Text>
+);
+Text.story = {
+  name: "Text",
+};
