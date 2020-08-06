@@ -48,7 +48,9 @@ const Section: React.FC<SectionProps> = (props) => {
             </Col>
           </Row>
         )}
-        {props.children}
+        <Row justify="center">
+          <Col span={24}>{props.children}</Col>
+        </Row>
       </div>
     </Parallax>
   );
