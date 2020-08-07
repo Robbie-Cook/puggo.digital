@@ -30,6 +30,7 @@ const Title: React.FC<{
         css`
           font-family: "Coustard", sans-serif;
           text-transform: lowercase;
+          word-wrap: break-word;
 
           ${props.level === 1
             ? `

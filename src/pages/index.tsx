@@ -6,9 +6,9 @@ import slugify from "slugify";
 import { Parallax } from "react-scroll-parallax";
 import styled from "@emotion/styled";
 
-import MyBackgroundImage from "../images/background-image.jpg";
-import Puggo2 from "../images/puggo-with-hat.jpg";
-import Robbie from "../images/people/robbie.jpg";
+import MyBackgroundImage from "../images/min/background-image.jpg";
+import Puggo2 from "../images/min/puggo-with-hat.jpg";
+import Robbie from "../images/min/robbie.jpg";
 
 import BackgroundImage from "../components/BackgroundImage";
 
