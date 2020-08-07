@@ -58,7 +58,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
             justify-content: center;
             align-items: center;
             margin-right: 50px;
-            text-shadow: 2px 1px 0px #ce5937;
+            text-shadow: 2px 1px 0px ${Colors.Red};
             font-family: "Coustard", serif;
             margin-top: -5px;
           `}
