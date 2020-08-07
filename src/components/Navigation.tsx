@@ -4,7 +4,7 @@ import React from "react";
 
 import { Layout, Menu, Breadcrumb, Typography } from "antd";
 import { useHistory, useLocation } from "react-router-dom";
-import Types from "../types";
+import { Colors, Pages } from "../types";
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -27,10 +27,10 @@ const Navigation: React.FC<NavigationProps> = (props) => {
    * Get the current page
    */
   let selectedPage = "";
-  if (location.pathname === Types.Pages.Home) {
-    selectedPage = Types.Pages.Home;
-  } else if (location.pathname === Types.Pages.Projects) {
-    selectedPage = Types.Pages.Projects;
+  if (location.pathname === Pages.Home) {
+    selectedPage = Pages.Home;
+  } else if (location.pathname === Pages.Projects) {
+    selectedPage = Pages.Projects;
   }
 
   console.log(location);
@@ -68,7 +68,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
       </div>
       <Menu mode="horizontal" selectedKeys={[selectedPage]}>
         <Menu.Item
-          key={Types.Pages.Home}
+          key={Pages.Home}
           css={css`
             color: black;
           `}
@@ -77,7 +77,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
           Home
         </Menu.Item>
         <Menu.Item
-          key={Types.Pages.Projects}
+          key={Pages.Projects}
           css={css`
             color: black;
           `}

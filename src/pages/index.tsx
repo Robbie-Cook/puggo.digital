@@ -19,12 +19,13 @@ import Typography from "../components/typography/Typography";
 import Button from "../components/Button";
 import Section from "../components/Section";
 import { Link } from "react-router-dom";
-import Types from "../types";
 import Person from "../components/Person";
+import { Colors, Pages } from "../types"
 
 const { Title, Text } = Typography;
 
 const { Header, Content, Footer } = Layout;
+
 
 const navHeight = 66;
 const footerHeight = 66;
@@ -40,8 +41,10 @@ const Value = styled((props: { children: string }) => (
   <Title
     css={css`
       margin-bottom: 4rem!important;
+      text-align: left;
+      font-size: 3rem!important;
     `}
-    level={4}
+    level={3}
   >
     {props.children}
   </Title>
@@ -105,7 +108,7 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
                   <Title
                     level={1}
                     css={css`
-                      text-shadow: 5px 2px 0px #ce5937;
+                      text-shadow: 5px 2px 0px ${Colors.Red};
                     `}
                   >
                     puggo digital
@@ -122,7 +125,7 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
 
               <Row>
                 <Col span={24}>
-                  <Link to={Types.Pages.Projects}>
+                  <Link to={Pages.Projects}>
                     <Button type="link" href="/projects">
                       See more...
                     </Button>
@@ -137,8 +140,8 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
                 <Col
                   span={24}
                   css={css`
-                    padding: 0 20%;
                   `}
+
                 >
                   <Value>Good things take time and dedication.</Value>
                   <Value>Do it once, do it right.</Value>

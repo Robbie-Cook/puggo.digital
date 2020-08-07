@@ -3,4 +3,8 @@ enum Pages {
   Projects = "/projects",
 }
 
-export default { Pages };
+enum Colors {
+  Red = "#ce5937",
+}
+
+export { Pages, Colors };
